@@ -37,9 +37,10 @@ func _process(delta):
 			isDragging = false
 			draw_area(false)
 			emit_signal("area_selected",self)
-			
-		
-	
+		else:
+			end = start
+			isDragging=false
+			draw_area(false)	
 	
 
 func _input(event):

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://p0grng5qdfqx"]
+[gd_scene load_steps=7 format=3 uid="uid://p0grng5qdfqx"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_4intc"]
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_woyqp"]
 [ext_resource type="PackedScene" uid="uid://dywrmpc3qludp" path="res://units/unit.tscn" id="2_w6g4k"]
+[ext_resource type="Script" path="res://UI.gd" id="3_3ex6o"]
+[ext_resource type="PackedScene" uid="uid://cknb26gpcqkgc" path="res://world-objects/tree.tscn" id="4_3gdna"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr80h"]
 bg_color = Color(0.25098, 0.25098, 0.25098, 0.662745)
@@ -19,9 +21,14 @@ script = ExtResource("1_4intc")
 script = ExtResource("1_woyqp")
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_3ex6o")
 
 [node name="Panel" type="Panel" parent="UI"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_tr80h")
+
+[node name="Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Units" type="Node2D" parent="."]
 
@@ -36,3 +43,11 @@ position = Vector2(418, 92)
 
 [node name="Unit4" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
 position = Vector2(193, 87)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Tree" parent="Objects" instance=ExtResource("4_3gdna")]
+position = Vector2(-256, 45)
+
+[node name="Tree2" parent="Objects" instance=ExtResource("4_3gdna")]
+position = Vector2(-185, 246)
