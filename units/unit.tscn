@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dywrmpc3qludp"]
+
+[ext_resource type="Texture2D" uid="uid://bsfap4qscjyx2" path="res://Human-Worker-Red.png" id="1_4oc0k"]
+[ext_resource type="Script" path="res://units/unit.gd" id="1_17h22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiobh"]
+size = Vector2(35.875, 36)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mof0v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.109804, 0.8, 0.8, 1)
+corner_radius_bottom_right = 1
+shadow_color = Color(0.113725, 0.513726, 0.611765, 0.0705882)
+shadow_size = 1
+
+[node name="Unit" type="CharacterBody2D"]
+position = Vector2(-2, 0)
+script = ExtResource("1_17h22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_uiobh")
+
+[node name="Human-worker-red" type="Sprite2D" parent="."]
+position = Vector2(7, 5.00002)
+scale = Vector2(2.16667, 2.16667)
+texture = ExtResource("1_4oc0k")
+hframes = 21
+vframes = 7
+
+[node name="Box" type="Panel" parent="."]
+offset_left = -17.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 22.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mof0v")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
