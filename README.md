@@ -1,6 +1,7 @@
 # Dominations Pixel - Beta v4.1.2
 
-![Dominations Pixel Logo](link_to_logo.png)
+![image](https://github.com/AjCu/godot-rts-pixel-game/assets/33881631/89786cfe-ffef-4d18-bad0-18cd1ef09e63)
+
 
 ## Descripción
 
