@@ -12,7 +12,7 @@ func _on_yes_pressed():
 	var unitPath = get_tree().get_root().get_node("world/Units")
 	var worldPath = get_tree().get_root().get_node("world")
 	var unit1 = unit.instantiate()
-	
+	unit1.name = "Unit" + str(unit1.get_instance_id())
 
 	unit1.position = housePos + Vector2(randomPosX, randomPosY)
 	unitPath.add_child(unit1)

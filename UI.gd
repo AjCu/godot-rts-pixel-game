@@ -1,8 +1,15 @@
 extends CanvasLayer
 
-@onready var label = $Label
+@onready var woodLabel = $WoodLabel
+@onready var goldLabel = $GoldLabel
+@onready var FoodLabel = $FoodLabel
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready():
+	woodLabel.position = Vector2(5,00)
+	goldLabel.position = Vector2(5,40)
+	FoodLabel.position = Vector2(5,80)
+	
 func _process(delta):
-	label.text = "Madera: " + str(Game.Wood)
+	woodLabel.text = "Madera: " + str(Game.Wood)
+	goldLabel.text = "Oro: " + str(Game.Gold)
+	FoodLabel.text = "Comida: " + str(Game.Food)

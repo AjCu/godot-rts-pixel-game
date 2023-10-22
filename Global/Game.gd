@@ -3,6 +3,8 @@ extends Node
 @onready var spawn = preload("res://Global/spawn_unit.tscn")
 
 var Wood = 0
+var Gold = 0
+var Food = 0
 
 func spawnUnit(pos):
 	var path = get_tree().get_root().get_node("world/UI")

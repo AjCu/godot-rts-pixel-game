@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://br43b1np6ag2o"]
+
+[ext_resource type="Script" path="res://world-objects/mines/goldMine.gd" id="1_dctsp"]
+[ext_resource type="Texture2D" uid="uid://b6hyq73af5i81" path="res://assets/Icons-Essentials.png" id="2_dguvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkhh5"]
+size = Vector2(48.625, 23.375)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_afn1j"]
+radius = 49.0408
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qiuf"]
+bg_color = Color(0, 0.666667, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x83n"]
+bg_color = Color(0.839216, 0.513726, 0.129412, 1)
+
+[node name="goldMine" type="StaticBody2D"]
+script = ExtResource("1_dctsp")
+
+[node name="Piece1" type="Sprite2D" parent="."]
+position = Vector2(-10.5, 0)
+scale = Vector2(1.6875, 1.75)
+texture = ExtResource("2_dguvk")
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="Piece2" type="Sprite2D" parent="."]
+position = Vector2(1, -10)
+scale = Vector2(1.6875, 1.75)
+texture = ExtResource("2_dguvk")
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="Piece3" type="Sprite2D" parent="."]
+position = Vector2(7, 5)
+scale = Vector2(1.6875, 1.75)
+texture = ExtResource("2_dguvk")
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 20)
+shape = SubResource("RectangleShape2D_nkhh5")
+
+[node name="chopArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chopArea"]
+position = Vector2(-2, 7)
+shape = SubResource("CircleShape2D_afn1j")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -48.0
+offset_right = 17.0
+offset_bottom = -44.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3qiuf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3x83n")
+value = 50.0
+show_percentage = false
+
+[connection signal="body_entered" from="chopArea" to="." method="_on_chop_area_body_entered"]
+[connection signal="body_shape_exited" from="chopArea" to="." method="_on_chop_area_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

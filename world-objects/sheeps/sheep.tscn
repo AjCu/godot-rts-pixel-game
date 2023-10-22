@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cknb26gpcqkgc"]
+[gd_scene load_steps=7 format=3 uid="uid://rikriqynwvk0"]
 
-[ext_resource type="Script" path="res://world-objects/tree.gd" id="1_htp48"]
-[ext_resource type="Texture2D" uid="uid://ohc5cjuxa3fs" path="res://assets/Trees.png" id="1_qs4h0"]
+[ext_resource type="Script" path="res://world-objects/sheeps/sheep.gd" id="1_wex1a"]
+[ext_resource type="Texture2D" uid="uid://dev4y2wmabdyk" path="res://assets/Sheep.png" id="2_8accj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkhh5"]
-size = Vector2(18.5, 9.5)
+size = Vector2(30.25, 12.75)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_afn1j"]
-radius = 36.0139
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_340bw"]
+size = Vector2(50, 41)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qiuf"]
 bg_color = Color(0, 0.666667, 0.803922, 1)
@@ -15,25 +15,26 @@ bg_color = Color(0, 0.666667, 0.803922, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x83n"]
 bg_color = Color(0.839216, 0.513726, 0.129412, 1)
 
-[node name="Tree" type="StaticBody2D"]
-script = ExtResource("1_htp48")
+[node name="sheep" type="StaticBody2D"]
+script = ExtResource("1_wex1a")
 
-[node name="Trees" type="Sprite2D" parent="."]
-position = Vector2(3, 0)
-scale = Vector2(3.5625, 3.40625)
-texture = ExtResource("1_qs4h0")
+[node name="sideSheep" type="Sprite2D" parent="."]
+position = Vector2(-2, -6)
+scale = Vector2(2.53125, 2.4375)
+texture = ExtResource("2_8accj")
 hframes = 4
-frame = 2
+vframes = 4
+frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 19)
+position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_nkhh5")
 
 [node name="chopArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chopArea"]
-position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_afn1j")
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_340bw")
 
 [node name="Timer" type="Timer" parent="."]
 

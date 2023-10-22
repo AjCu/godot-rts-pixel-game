@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://p0grng5qdfqx"]
+[gd_scene load_steps=11 format=3 uid="uid://p0grng5qdfqx"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_4intc"]
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_woyqp"]
 [ext_resource type="Texture2D" uid="uid://cgbb47415hi1l" path="res://assets/TexturedGrass.png" id="2_dmldp"]
 [ext_resource type="PackedScene" uid="uid://dywrmpc3qludp" path="res://units/unit.tscn" id="2_w6g4k"]
 [ext_resource type="Script" path="res://UI.gd" id="3_3ex6o"]
-[ext_resource type="PackedScene" uid="uid://cknb26gpcqkgc" path="res://world-objects/tree.tscn" id="4_3gdna"]
+[ext_resource type="PackedScene" uid="uid://cknb26gpcqkgc" path="res://world-objects/trees/tree.tscn" id="4_3gdna"]
 [ext_resource type="PackedScene" uid="uid://chp1tdr4s32jo" path="res://BarnHouse.tscn" id="7_7qnsh"]
+[ext_resource type="PackedScene" uid="uid://br43b1np6ag2o" path="res://world-objects/mines/goldMine.tscn" id="7_ip708"]
+[ext_resource type="PackedScene" uid="uid://rikriqynwvk0" path="res://world-objects/sheeps/sheep.tscn" id="8_oplu5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr80h"]
 bg_color = Color(0.25098, 0.25098, 0.25098, 0.662745)
@@ -38,24 +40,48 @@ script = ExtResource("3_3ex6o")
 [node name="Panel" type="Panel" parent="UI"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_tr80h")
 
-[node name="Label" type="Label" parent="UI"]
+[node name="WoodLabel" type="Label" parent="UI"]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.47451, 0.266667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+
+[node name="GoldLabel" type="Label" parent="UI"]
+offset_left = 53.0
+offset_top = 1.0
+offset_right = 93.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.776471, 0.678431, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+
+[node name="FoodLabel" type="Label" parent="UI"]
+offset_left = 99.0
+offset_right = 139.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.588235, 0.12549, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 30
 
 [node name="Units" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Unit" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
-position = Vector2(236, 208)
+position = Vector2(360, 64)
 
 [node name="Unit2" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
-position = Vector2(88, 134)
+position = Vector2(86, 68)
 
 [node name="Unit3" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
-position = Vector2(418, 92)
+position = Vector2(262, 37)
 
 [node name="Unit4" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
-position = Vector2(193, 87)
+position = Vector2(155, -111)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -66,7 +92,28 @@ position = Vector2(-256, 45)
 [node name="Tree2" parent="Objects" instance=ExtResource("4_3gdna")]
 position = Vector2(-185, 246)
 
+[node name="goldMine" parent="Objects" instance=ExtResource("7_ip708")]
+position = Vector2(16, -210)
+
+[node name="goldMine2" parent="Objects" instance=ExtResource("7_ip708")]
+position = Vector2(-134, -198)
+
+[node name="sheep" parent="Objects" instance=ExtResource("8_oplu5")]
+position = Vector2(226, 247)
+
+[node name="sheep2" parent="Objects" instance=ExtResource("8_oplu5")]
+position = Vector2(95, 254)
+
 [node name="Buildings" type="Node2D" parent="."]
 
 [node name="BarnHouse" parent="Buildings" instance=ExtResource("7_7qnsh")]
 position = Vector2(368, -149)
+
+[node name="sheep2" parent="." instance=ExtResource("8_oplu5")]
+position = Vector2(95, 254)
+
+[node name="sheep3" parent="." instance=ExtResource("8_oplu5")]
+position = Vector2(171, 289)
+
+[node name="sheep4" parent="." instance=ExtResource("8_oplu5")]
+position = Vector2(171, 289)
