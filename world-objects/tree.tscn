@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cknb26gpcqkgc"]
 
 [ext_resource type="Script" path="res://world-objects/tree.gd" id="1_htp48"]
-[ext_resource type="Texture2D" uid="uid://ohc5cjuxa3fs" path="res://Trees.png" id="1_qs4h0"]
+[ext_resource type="Texture2D" uid="uid://ohc5cjuxa3fs" path="res://assets/Trees.png" id="1_qs4h0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkhh5"]
 size = Vector2(18.5, 9.5)

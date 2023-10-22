@@ -5,8 +5,12 @@ var units = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	units = get_tree().get_nodes_in_group("unit")
+	get_units()
+	
 
+func get_units():
+		units = null
+		units = get_tree().get_nodes_in_group("Units")
 
 
 func _on_area_selected(object):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dywrmpc3qludp"]
 
-[ext_resource type="Texture2D" uid="uid://bsfap4qscjyx2" path="res://Human-Worker-Red.png" id="1_4oc0k"]
+[ext_resource type="Texture2D" uid="uid://bsfap4qscjyx2" path="res://assets/Human-Worker-Red.png" id="1_4oc0k"]
 [ext_resource type="Script" path="res://units/unit.gd" id="1_17h22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiobh"]
@@ -8,13 +8,13 @@ size = Vector2(35.875, 36)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mof0v"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.109804, 0.8, 0.8, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.937255, 0.615686, 0.160784, 1)
 corner_radius_bottom_right = 1
-shadow_color = Color(0.113725, 0.513726, 0.611765, 0.0705882)
+shadow_color = Color(0.168627, 0.501961, 0.65098, 0.2)
 shadow_size = 1
 
 [sub_resource type="Animation" id="Animation_yesmd"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://p0grng5qdfqx"]
+[gd_scene load_steps=9 format=3 uid="uid://p0grng5qdfqx"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_4intc"]
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_woyqp"]
+[ext_resource type="Texture2D" uid="uid://cgbb47415hi1l" path="res://assets/TexturedGrass.png" id="2_dmldp"]
 [ext_resource type="PackedScene" uid="uid://dywrmpc3qludp" path="res://units/unit.tscn" id="2_w6g4k"]
 [ext_resource type="Script" path="res://UI.gd" id="3_3ex6o"]
 [ext_resource type="PackedScene" uid="uid://cknb26gpcqkgc" path="res://world-objects/tree.tscn" id="4_3gdna"]
+[ext_resource type="PackedScene" uid="uid://chp1tdr4s32jo" path="res://BarnHouse.tscn" id="7_7qnsh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr80h"]
 bg_color = Color(0.25098, 0.25098, 0.25098, 0.662745)
@@ -15,7 +17,17 @@ border_width_bottom = 2
 border_color = Color(0.94902, 0.729412, 0.796078, 1)
 
 [node name="world" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_4intc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -835.0
+offset_top = -493.0
+offset_right = 869.0
+offset_bottom = 603.0
+texture = ExtResource("2_dmldp")
+stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("1_woyqp")
@@ -31,12 +43,13 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Units" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Unit" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
-position = Vector2(-2, -3)
+position = Vector2(236, 208)
 
 [node name="Unit2" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
-position = Vector2(42, 193)
+position = Vector2(88, 134)
 
 [node name="Unit3" parent="Units" groups=["unit"] instance=ExtResource("2_w6g4k")]
 position = Vector2(418, 92)
@@ -45,9 +58,15 @@ position = Vector2(418, 92)
 position = Vector2(193, 87)
 
 [node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Tree" parent="Objects" instance=ExtResource("4_3gdna")]
 position = Vector2(-256, 45)
 
 [node name="Tree2" parent="Objects" instance=ExtResource("4_3gdna")]
 position = Vector2(-185, 246)
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="BarnHouse" parent="Buildings" instance=ExtResource("7_7qnsh")]
+position = Vector2(368, -149)
